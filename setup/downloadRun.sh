@@ -14,6 +14,8 @@ mkdir Code/sparklyr
 wget https://raw.githubusercontent.com/akzaidi/mlads_spark_tutorial/master/github_installs.R
 # chmod +x downloadRun.sh
 
+
+##### ------------------------ didn't work ---------- begin
 cd  /home/diispark/Code/sparklyr
 # We need to copy code files for sparklyr exercise from Ali's GitHub repo in this folder
 wget https://raw.githubusercontent.com/akzaidi/spark_nyc_taxi/master/raw_urls.txt
@@ -22,7 +24,7 @@ cat raw_urls.txt | xargs -n 1 -P 6 wget -c -P data/
 hadoop fs -mkdir /user/RevoShare/diispark/nyctaxi
 hadoop fs -copyFromLocal data/ /user/RevoShare/diispark/nyctaxi/
 rm raw_urls.txt
-
+##### ------------------------ didn't work ---------- end
 rm -r data/
  
 wget https://raw.githubusercontent.com/akzaidi/mlads_spark_tutorial/master/1-taxi-eda.Rmd
@@ -99,7 +101,11 @@ sudo sed -i.bak "s/replaceWithToken/$amlToken/" /home/diispark/Code/MRS/azureml-
 ## Reduce spark logging, because it slows down RStudio
 ###########################################################################
 
+
+##### ------------------------ didn't work ---------- begin
 sudo sed -i.bak 's/INFO/WARN/' /etc/spark/conf/log4j.properties
+##### ------------------------ didn't work ---------- end
+
 
 ###########################################################################
 ## Install packages, remove older version of packages prior to installation
@@ -141,7 +147,7 @@ if [[ -d rmarkdown ]]; then sudo rm -Rf rmarkdown; fi;
 ## Call R file to install packages
 ###########################################################################
 cd /home/diispark
-sudo R --vanilla --quiet  <  /home/diispark/github_installs.R
+sudo R --vanilla --quiet  <  /home/diispark/Code/github_installs.R
 
 ###########################################################################
 ## Install Rstudio

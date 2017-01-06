@@ -2,9 +2,9 @@
 
 echo "Sample action script to install RStudio Server (community edition)..."
 
-RSTUDIO_VERSION=1.0.44
+RSTUDIO_VERSION=1.0.4
 RSTUDIO_FILE=rstudio-server-"$RSTUDIO_VERSION"-amd64.deb
-MRS_FILE_VERSION=8.0
+MRS_FILE_VERSION=3.3
 R_LIBRARY=/usr/lib64/microsoft-r/"$MRS_FILE_VERSION"/lib64/R
 R_HADOOP_DIR=/usr/lib64/microsoft-r/"$MRS_FILE_VERSION"/hadoop
 

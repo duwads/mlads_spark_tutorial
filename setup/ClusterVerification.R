@@ -14,10 +14,15 @@ hdfsFiles <- (length(files1) == 17) && (length(files2) == 17)
 # Verify some of the files on the edge node
 ############################################################################################
 
-edgeMRSFiles <- (file.exists("/home/remoteuser/Code/MRS/1-Clean-Join-Subset.r") && file.exists("/home/remoteuser/Code/MRS/2-Train-Test-Subset.r") && file.exists("/home/remoteuser/Code/MRS/3-Deploy-Score-Subset.r") &&
-                file.exists("/home/remoteuser/Code/MRS/SetComputeContext.r") && file.exists("/home/remoteuser/Code/MRS/Installation.r") && file.exists("/home/remoteuser/Code/MRS/azureml-settings.json") )
+edgeMRSFiles <- (file.exists("/home/remoteuser/Code/MRS/1-Clean-Join-Subset.r") && 
+                   file.exists("/home/remoteuser/Code/MRS/2-Train-Test-Subset.r") && 
+                   file.exists("/home/remoteuser/Code/MRS/3-Deploy-Score-Subset.r") &&
+                   file.exists("/home/remoteuser/Code/MRS/SetComputeContext.r") && 
+                   file.exists("/home/remoteuser/Code/MRS/Installation.r") && 
+                   file.exists("/home/remoteuser/Code/MRS/azureml-settings.json") )
 
-edgeSparklyRFiles <- (file.exists("/home/remoteuser/Code/sparklyr/1-taxi-eda.Rmd") && file.exists("/home/remoteuser/Code/sparklyr/2-spark-ml.Rmd"))
+edgeSparklyRFiles <- (file.exists("/home/remoteuser/Code/sparklyr/1-taxi-eda.Rmd") && 
+                        file.exists("/home/remoteuser/Code/sparklyr/2-spark-ml.Rmd"))
 
 ############################################################################################
 # Verify that we can run Spark jobs
@@ -27,9 +32,9 @@ rxOptions(fileSystem = RxHdfsFileSystem())
 
 # Specify hdfsShareDir and shareDir so that
 # RxSpark will work even if we run as root
-computeContext <- RxSpark(consoleOutput=TRUE,
-	hdfsShareDir = "/user/RevoShare/remoteuser",
-	shareDir = "/var/RevoShare/remoteuser")
+computeContext <- RxSpark(consoleOutput=TRUE, 
+                          hdfsShareDir = "/user/RevoShare/remoteuser",
+                          shareDir = "/var/RevoShare/remoteuser")
 rxSetComputeContext(computeContext)
 
 spark1 <- NULL
