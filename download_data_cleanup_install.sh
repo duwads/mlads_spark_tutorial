@@ -1,5 +1,5 @@
 
-user_name=diispark
+user_name=duwadsspark
 amlToken=$1
 
 ################################################################################
@@ -96,29 +96,6 @@ sudo apt-get -y -qq install libcurl4-openssl-dev
 sudo apt-get -y -qq install libcurl4-gnutls-dev
 sudo apt-get -y -qq install libssl-dev
 sudo apt-get -y -qq install libxml2-dev
-
-cd /usr/lib64/microsoft-r/8.0/lib64/R/library
-if [[ -d sparklyr ]]; then sudo rm -Rf sparklyr; fi;
-if [[ -d sparkapi ]]; then sudo rm -Rf sparkapi; fi;
-if [[ -d rprojroot ]]; then sudo rm -Rf rprojroot; fi;
-if [[ -d dplyr ]]; then sudo rm -Rf dplyr; fi;
-if [[ -d Rcpp ]]; then sudo rm -Rf Rcpp; fi;
-if [[ -d DBI ]]; then sudo rm -Rf DBI; fi;
-if [[ -d config ]]; then sudo rm -Rf config; fi;
-if [[ -d tibble ]]; then sudo rm -Rf tibble; fi;
-if [[ -d devtools ]]; then sudo rm -Rf devtools; fi;
-if [[ -d rmarkdown ]]; then sudo rm -Rf rmarkdown; fi;
-if [[ -d knitr ]]; then sudo rm -Rf knitr; fi;
-if [[ -d AzureML ]]; then sudo rm -Rf AzureML; fi;
-if [[ -d RCurl ]]; then sudo rm -Rf RCurl; fi;
-if [[ -d rjson ]]; then sudo rm -Rf rjson; fi;
-if [[ -d hts ]]; then sudo rm -Rf hts; fi;
-if [[ -d fpp ]]; then sudo rm -Rf fpp; fi;
-if [[ -d randomForest ]]; then sudo rm -Rf randomForest; fi;
-if [[ -d readr ]]; then sudo rm -Rf readr; fi;
-
-cd /home/"$user_name"/R/x86_64-pc-linux-gnu-library/3.2
-if [[ -d rmarkdown ]]; then sudo rm -Rf rmarkdown; fi;
 
 ################################################################################
 ## call R file to remove old and then reinstall packages

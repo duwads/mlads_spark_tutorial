@@ -1,37 +1,50 @@
+#' ---
+#' title: "R Package Installation"
+#' author: '2017-01-06'
+#' date: "Duncan Wadsworth"
+#' ---
 
+#' list R packages available on CRAN
+cranpkgs = c('AzureML',
+             'config',
+             'DBI',
+             'devtools', 
+             'dplyr',
+             'formatR',
+             'fpp',
+             'ggplot2',
+             'gridExtra',
+             'hts',
+             'knitr',
+             'Rcpp',
+             'RCurl',
+             'randomForest',
+             'readr',
+             'rjson',
+             'rmarkdown',
+             'rprojroot',
+             'sparkapi',
+             'sparklyr',
+             'tibble',
+             'tidyr')
 
-cranpkgs = c("AzureML",
-             "devtools", 
-             "dplyr",
-             "ggplot2",
-             "gridExtra",
-             "knitr")
+#' remove old versions first, if they exist
+remove.packages(cranpkgs)
 
+#' install 'em
+install.packages(cranpkgs, repos = 'http://cran.us.r-project.org')
 
-install.packages("Rcpp", repos = 'http://cran.us.r-project.org')
-install.packages("rmarkdown", repos = 'http://cran.us.r-project.org')
-install.packages(, repos = 'http://cran.us.r-project.org')
-install.packages(, repos = 'http://cran.us.r-project.org')
-install.packages(, repos = 'http://cran.us.r-project.org')
-install.packages("RCurl", repos = 'http://cran.us.r-project.org')
-install.packages("rjson", repos = 'http://cran.us.r-project.org')
-install.packages("hts", repos = 'http://cran.us.r-project.org')
-install.packages("fpp", repos = 'http://cran.us.r-project.org')
-install.packages("randomForest", repos = 'http://cran.us.r-project.org')
-install.packages("readr", repos = 'http://cran.us.r-project.org')
-install.packages("sparklyr", repos = 'http://cran.us.r-project.org')
-install.packages("formatR", repos = 'http://cran.us.r-project.org')
-install.packages("tidyr", repos = 'http://cran.us.r-project.org')
-install.packages("tibble", repos = 'http://cran.us.r-project.org')
+#' list R packages available on GitHub
+#ghpkgs = c('config', 'DBI', 'rprojroot', 'sparkapi')
 
+#' remove old versions first, if they exist
+#remove.packages(ghpkgs)
 
-ghpkgs = c()
-
-library(devtools)
-options(unzip = 'internal')
-
-devtools::install_github("rstudio/config");
-devtools::install_github("rstats-db/DBI");
-devtools::install_github("krlmlr/rprojroot");
-devtools::install_github("rstudio/sparkapi");
+#' install 'em
+#library(devtools)
+#options(unzip = 'internal')
+#install_github('rstudio/config')
+#install_github('rstats-db/DBI')
+#install_github('krlmlr/rprojroot')
+#install_github('rstudio/sparkapi')
 
